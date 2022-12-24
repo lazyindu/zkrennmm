@@ -56,8 +56,8 @@ Men Telegram fayllarni nomini o'zgartirib va videoga pechat qo'yib beradigan bot
 Menga Fayl/Video/Audio yuboring va uni qayta nomlang✍️
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Press Chiqarish 💪" ,url="https://t.me/+TaweX_GKt4VmZjky") ], 
-	[InlineKeyboardButton("Muzikalar 🎶", url="https://t.me/+Ona2jSz88bs0MmUy") ]  ]))
+	 [[ InlineKeyboardButton("O'ktam Jo'rayev O'J8" ,url="https://t.me/ABDEFGAR") ], 
+	[InlineKeyboardButton("𝐅𝐨𝐲𝐝𝐚𝐥𝐢 𝐁𝐨𝐭𝐥𝐚𝐫 🤖 O'J8", url="https://t.me/Kerakli_va_Foydali_botlar") ]  ]))
 	        except:
 	             return
 	    else:
@@ -73,8 +73,8 @@ Menga Fayl/Video/Audio yuboring va uni qayta nomlang✍️
 	
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
-	 [[ InlineKeyboardButton("Press Chiqarish 💪" ,url="https://t.me/+TaweX_GKt4VmZjky") ], 
-	[InlineKeyboardButton("Muzikalar 🎶", url="https://t.me/+Ona2jSz88bs0MmUy") ]  ]))
+	 [[ InlineKeyboardButton("O'ktam Jo'rayev O'J8" ,url="https://t.me/ABDEFGAR") ], 
+	[InlineKeyboardButton("𝐅𝐨𝐲𝐝𝐚𝐥𝐢 𝐁𝐨𝐭𝐥𝐚𝐫 🤖 O'J8", url="https://t.me/Kerakli_va_Foydali_botlar") ]  ]))
 	         
 
 
@@ -87,10 +87,10 @@ async def send_doc(client,message):
        	try:
        		await client.get_chat_member(update_channel, user_id)
        	except UserNotParticipant:
-       		await message.reply_text("Mendan foydalanish uchun @Renamere_bot_adminlar_uchun guruhiga obuna boʻling!!!\n\nGuruhdan chiqsangiz foydalanishdan banlanasiz!",
+       		await message.reply_text("Mendan foydalanish uchun @ABDEFGAR kanaliga obuna boʻling!!!\n\nKanaldan chiqsangiz foydalanishdan banlanasiz!",
        		reply_to_message_id = message.id,
        		reply_markup = InlineKeyboardMarkup(
-       		[ [ InlineKeyboardButton("Guruhga ulanish" ,url=f"https://t.me/{update_channel}") ]   ]))
+       		[ [ InlineKeyboardButton("Obuna bo'lish" ,url=f"https://t.me/{update_channel}") ]   ]))
        		return
        
        bot_data = find_one(int(botid))
@@ -126,7 +126,7 @@ async def send_doc(client,message):
        		file = media.document or media.video or media.audio 
        		dcid = FileId.decode(file.file_id).dc_id
        		filename = file.file_name
-       		value = 15360000000
+       		value = 0
        		used_ = find_one(message.from_user.id)
        		used = used_["used_limit"]
        		limit = used_["uploadlimit"]
