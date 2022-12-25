@@ -87,7 +87,7 @@ async def send_doc(client,message):
        	try:
        		await client.get_chat_member(update_channel, user_id)
        	except UserNotParticipant:
-       		await message.reply_text("Mendan foydalanish uchun @ABDEFGAR kanaliga obuna boʻling!!!\n\nKanaldan chiqsangiz foydalanishdan banlanasiz!",
+       		await message.reply_text("Mendan foydalanish uchun @ABDEFGAR kanaliga obuna boʻling!!!\n\nKanaldan chiqib ketsangiz botdan foydalana olmaysiz.",
        		reply_to_message_id = message.id,
        		reply_markup = InlineKeyboardMarkup(
        		[ [ InlineKeyboardButton("Obuna bo'lish" ,url=f"https://t.me/{update_channel}") ]   ]))
