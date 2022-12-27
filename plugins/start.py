@@ -38,8 +38,8 @@ async def start(client,message):
 	except:
 	    await message.reply_text(text =f"""
 	Salom {message.from_user.first_name }
-Men Telegram fayllarni nomini o'zgartirib va videoga pechat qo'yib beradigan botman! 
-Menga Fayl/Video/Audio yuboring va uni qayta nomlang✍️
+Men "Telegram" fayllarining nomini o'zgartirib yuziga pechat qo'yib beraman, hamda videolarning yuziga ham pechat qo'yaman.
+Menga fayl yoki video yuboring va nomini o'zgartirib pechat qo'yib oling.
 	
 	""",reply_to_message_id = message.id ,  
 	reply_markup=InlineKeyboardMarkup(
