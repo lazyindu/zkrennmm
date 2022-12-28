@@ -21,10 +21,10 @@ async def start(client, message):
         int(time.mktime(time.strptime(str(date_.today()), '%Y-%m-%d')))
     if expi != 0:
         today = date_.today()
-    pattern = '%Y-%m-%d'
-    epcho = int(time.mktime(time.strptime(str(today), pattern)))
-    daily_(message.from_user.id, epcho)
-    used_limit(message.from_user.id, 0)
+        pattern = '%Y-%m-%d'
+        epcho = int(time.mktime(time.strptime(str(today), pattern)))
+        daily_(message.from_user.id, epcho)
+        used_limit(message.from_user.id, 0)
     _newus = find_one(message.from_user.id)
     used = _newus["used_limit"]
     limit = _newus["uploadlimit"]
@@ -32,17 +32,17 @@ async def start(client, message):
     user = _newus["usertype"]
     ends = _newus["prexdate"]
     if ends:
-    pre_check = check_expi(ends)
-if pre_check == False:
-    uploadlimit(message.from_user.id, 2147483648)
-    usertype(message.from_user.id, "Free")
-if ends == None:
-    text = f"User ID:- ```{message.from_user.id}```\nPlan :- {user}\nDaly Upload Limit :- {humanbytes(limit)}\nToday Used :- {humanbytes(used)}\nRemain:- {humanbytes(remain)}"
-else:
-    normal_date = datetime.fromtimestamp(ends).strftime('%Y-%m-%d')
-    text = f"User ID:- ```{message.from_user.id}```\nPlan :- {user}\nDaly Upload Limit :- {humanbytes(limit)}\nToday Used :- {humanbytes(used)}\nRemain:- {humanbytes(remain)}\n\n```Your Plan Ends On :- {normal_date}"
+        pre_check = check_expi(ends)
+        if pre_check == False:
+            uploadlimit(message.from_user.id, 2147483648)
+            usertype(message.from_user.id, "Free")
+    if ends == None:
+        text = f"User ID:- ```{message.from_user.id}```\nPlan :- {user}\nDaly Upload Limit :- {humanbytes(limit)}\nToday Used :- {humanbytes(used)}\nRemain:- {humanbytes(remain)}"
+    else:
+        normal_date = datetime.fromtimestamp(ends).strftime('%Y-%m-%d')
+        text = f"User ID:- ```{message.from_user.id}```\nPlan :- {user}\nDaly Upload Limit :- {humanbytes(limit)}\nToday Used :- {humanbytes(used)}\nRemain:- {humanbytes(remain)}\n\n```Your Plan Ends On :- {normal_date}"
 
-if user == "Free":
-    await message.reply(text, quote=True, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Upgrade 💰💳", callback_data="upgrade"), InlineKeyboardButton("Cancel ✖️ ", callback_data="cancel")]]))
-else:
-    await message.reply(text, quote=True)
+    if user == "Free":
+        await message.reply(text, quote=True, reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Upgrade 💰💳", callback_data="upgrade"), InlineKeyboardButton("Cancel ✖️ ", callback_data="cancel")]]))
+    else:
+        await message.reply(text, quote=True)
